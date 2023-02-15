@@ -20,27 +20,28 @@ function Chatbot() {
   const getResponse = async () => {
     const configuration = new Configuration({
       organization: "org-hGs4tZBO2p7ktqxJ9OBXZfl4",
-      apiKey: "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",
+      apiKey: "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",
     });
 
     const openai = new OpenAIApi(configuration);
-    if (message === "none") {
+    if (message.length < 5) {
       setData((prev) => [
         ...prev,
         {
-          message: "Sorry, did you say anything?",
+          message: "Sorry, did you say something?",
           type: "bot",
           time: "12:20",
         },
       ]);
     }
-    if (message != "") {
+    if (message && message.length > 5) {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: message,
         max_tokens: 100,
         temperature: 0.9,
       });
+
       setData((prev) => [
         ...prev,
         {
@@ -50,11 +51,9 @@ function Chatbot() {
         },
       ]);
     }
-
-    console.log(response.data.choices[0].text);
   };
   const handleKeyDown = (e) => {
-    if (event.key === "Enter") {
+    if (e.key === "Enter") {
       sendMessage(e);
     }
   };
@@ -73,12 +72,11 @@ function Chatbot() {
       },
     ]);
     setMessage("");
+    console.log(data);
 
     await getResponse();
   };
   const scrollToBottom = () => {
-    console.log("it changed");
-    console.log(blankRef.current);
     blankRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -90,7 +88,6 @@ function Chatbot() {
       maxW="90%"
       mt="10px"
       minH={500}
-      bg="gray.200"
       as="section"
       paddingTop={5}
     >
@@ -160,7 +157,10 @@ function Chatbot() {
                 })
               ) : (
                 <Heading color={"teal"} fontSize={15} mt={"150px"}>
-                  🤖 <br/>Hi, I'm Linda, <br/>your personal assistant.<br/> How can I help you?
+                  🤖 <br />
+                  Hi, I'm Linda, <br />
+                  your personal assistant.
+                  <br /> How can I help you?
                 </Heading>
               )}
 
@@ -179,8 +179,7 @@ function Chatbot() {
                   placeholder={"Your Messages.."}
                   onChange={(e) => setMessage(e.target.value)}
                   overflowWrap={true}
-                  htmlSize={25}
-                  width="auto"
+                  w={{base: 200, md: 300}}
                   mr={20}
                 />
                 <Button
@@ -192,6 +191,7 @@ function Chatbot() {
                   right={2}
                   borderRadius={30}
                   pr={2}
+                  py={5}
                   type={"submit"}
                   onClick={sendMessage}
                   onKeyDown={handleKeyDown}

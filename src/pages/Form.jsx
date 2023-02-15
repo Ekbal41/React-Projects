@@ -44,7 +44,7 @@ function Form() {
       maxW="90%"
       mt="10px"
       minH={500}
-      bg="gray.200"
+      
       as="section"
       paddingTop={5}
     >
