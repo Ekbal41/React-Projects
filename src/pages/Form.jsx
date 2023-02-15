@@ -33,9 +33,7 @@ function Form() {
     updateStarte(newData);
   };
   const updateStarte = (newData) => {
-    console.log("its here");
     setUser({ ...user, ...newData });
-    console.log(user);
   };
 
   const toast = useToast();
@@ -49,6 +47,10 @@ function Form() {
       as="section"
       paddingTop={5}
     >
+     {user.name}
+     {user.email}
+     {user.password}
+     {user.repeatPassword}
       <Box
         pt={250}
         bg={"white"}
