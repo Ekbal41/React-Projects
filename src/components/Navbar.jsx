@@ -48,15 +48,15 @@ function Navbar() {
           <Box>
             <Link
               display={{ base: "none", md: "block", lg: "block" }}
-              to="/about"
+              to="/form"
             >
-              <Text marginRight={10}>About</Text>
+              <Text marginRight={10}>Form</Text>
             </Link>
           </Box>
           <Box>
             <Link
               display={{ base: "none", md: "block", lg: "block" }}
-              to="/contact"
+              to="/calculetor"
             >
               <Text marginRight={10}>Calculetor</Text>
             </Link>
