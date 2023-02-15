@@ -34,11 +34,11 @@ function Navbar() {
     <>
       <Flex
         px="20px"
-        color={"teal"}
+        color={"white"}
         h="50px"
         fontWeight={"bold"}
         justifyContent={"center"}
-        borderBottom="4px"
+       bg={"teal"}
         alignItems={"center"}
         cursor={"pointer"}
       >
@@ -59,6 +59,14 @@ function Navbar() {
               to="/calculetor"
             >
               <Text marginRight={10}>Calculetor</Text>
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              display={{ base: "none", md: "block", lg: "block" }}
+              to="/chatbot"
+            >
+              <Text marginRight={10}>Chatbot</Text>
             </Link>
           </Box>
 

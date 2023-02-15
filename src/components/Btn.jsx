@@ -7,7 +7,7 @@ function Btn({ value }) {
   const { calc, setCalc } = useContext(CalculetorContext);
   const uniqueStyle = (value) => {
     const className = {
-      "=": "outline",
+      "=": "solid",
       x: "outline",
       "-": "outline",
       "+": "outline",

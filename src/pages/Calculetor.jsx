@@ -2,6 +2,7 @@ import { Container, Heading, Box, Flex, Spacer, Grid } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { CalculetorContext } from "../context/CalContext";
 import Btn from "../components/Btn";
+import { motion } from "framer-motion";
 
 function Contact() {
   const { calc, setCalc } = useContext(CalculetorContext);
@@ -22,6 +23,11 @@ function Contact() {
       as="section"
       paddingTop={5}
     >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
       <Box
         pt={250}
         bg={"white"}
@@ -44,6 +50,7 @@ function Contact() {
             borderRadius={10}
             border={"1px solid teal"}
             mb={4}
+            bg={"gray.100"}
             
             overflow={"hidden"}
           >
@@ -51,16 +58,19 @@ function Contact() {
             <Heading
             fontSize={18}
             fontFamily={"monospace"}
-            >Result :{" " + calc.result}</Heading>
+            marginLeft={1}
+            textAlign={"end"}
+            >{calc.result}</Heading>
           </Flex>
 
-          <Grid h={310} borderRadius={10} border={"1px solid teal"} p={3} templateColumns='repeat(4, 1fr)' gap={3} >
+          <Grid h={310} borderRadius={10} border={"1px solid teal"} p={3} templateColumns='repeat(4, 1fr)' gap={3}  >
             {btnValues.flat().map((btn, i) => (
               <Btn value={btn} key={i} />
             ))}
           </Grid>
         </Flex>
       </Box>
+      </motion.div>
     </Container>
   );
 }
