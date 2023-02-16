@@ -15,19 +15,25 @@ function Project() {
   return (
     <Container
       textAlign={"center"}
-      maxW="90%"
+      maxW="100%"
       mt="10px"
       minH={500}
       as="section"
       paddingTop={5}
+      mr={300}
     >
       <Heading color={"teal"} mt={10}>
         My Projects
       </Heading>
       <Grid
-        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
         gap={9}
         mt={20}
+        pl={4}
       >
         <Box
           boxShadow={"0 0 10px 0 rgba(0,0,0,0.2)"}
@@ -216,6 +222,9 @@ function Project() {
           </Stack>
         </Box>
       </Grid>
+      <Button rightIcon={<ExternalLinkIcon />} variant="solid" colorScheme="teal" mt={20}>
+        See More
+      </Button>
     </Container>
   );
 }

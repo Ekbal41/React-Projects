@@ -13,6 +13,7 @@ import About from "../components/About";
 import Project from "../components/Project";
 import Conatct from "../components/Conatct";
 import Footer from "../components/Footer";
+import Skill from "../components/Skill";
 
 function Home() {
   return (
@@ -53,6 +54,7 @@ function Home() {
         </Box>
       </Flex>
       <About />
+      <Skill />
       <Project/>
       <Conatct/>
       <Footer/>
