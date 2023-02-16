@@ -9,6 +9,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Hero from "../assets/hero.png";
+import About from "../components/About";
+import Project from "../components/Project";
+import Conatct from "../components/Conatct";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -16,29 +20,30 @@ function Home() {
       as={"section"}
       maxW="90%"
       mt={5}
-      bg="gray.200"
+     
       borderRadius={5}
       color="#262626"
       h ='100%'
+     
     >
-      <Flex alignItems={"center"} flexDir={{ base: "column", md: "row" }}>
+      <Flex alignItems={"center"} flexDir={{ base: "column-reverse", md: "row" }}>
         <Box flex="1" p={5} mt={{md:'100px',}}>
-          <Heading as="h1" mb={5}>
+          <Heading as="h1" mb={5} color="teal">
             Welcome to my mini project website.
             <br />
            
           </Heading>
-          <Heading fontSize={20} mt={5} color="teal" as="h3">
+          <Heading fontSize={20} mt={5}  as="h3">
             Lorem ipsum dolornt aliquid nulla perspiciatis sequi, eos nisi ecto.
             Lorem ipsum dolornt aliquid nulla perspiciatis sequi, eos nisi
             recusandae assumenda architecto.
           </Heading>
           <Stack direction="row" spacing={4} align="center" mt={10}>
             <Button colorScheme="teal" variant="solid" >
-              Button
+              Get Started
             </Button>
             <Button colorScheme="teal" variant="outline">
-              Button
+              Say Hello
             </Button>
           </Stack>
         </Box>
@@ -47,6 +52,10 @@ function Home() {
           <Image src={Hero} alt="Dan Abramov" />
         </Box>
       </Flex>
+      <About />
+      <Project/>
+      <Conatct/>
+      <Footer/>
     </Container>
   );
 }

@@ -20,7 +20,7 @@ function Chatbot() {
   const getResponse = async () => {
     const configuration = new Configuration({
       organization: "org-hGs4tZBO2p7ktqxJ9OBXZfl4",
-      apiKey: "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",
+      apiKey: "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",
     });
 
     const openai = new OpenAIApi(configuration);

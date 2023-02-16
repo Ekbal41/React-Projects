@@ -38,35 +38,26 @@ function Navbar() {
         h="50px"
         fontWeight={"bold"}
         justifyContent={"center"}
-       bg={"teal"}
+        bg={"teal"}
         alignItems={"center"}
         cursor={"pointer"}
       >
-        <Link to="/">APPNAME</Link>
+        <Link to="/"> 🏡HOME</Link>
         <Spacer />
         <Flex>
-          <Box>
-            <Link
-              display={{ base: "none", md: "block", lg: "block" }}
-              to="/form"
-            >
-              <Text marginRight={10}>Form</Text>
+          <Box display={{ base: "none", md: "block" }}>
+            <Link to="/form">
+              <Text marginRight={10}> 📝Form</Text>
             </Link>
           </Box>
-          <Box>
-            <Link
-              display={{ base: "none", md: "block", lg: "block" }}
-              to="/calculetor"
-            >
-              <Text marginRight={10}>Calculetor</Text>
+          <Box display={{ base: "none", md: "block" }}>
+            <Link to="/calculetor">
+              <Text marginRight={10}> 📟Calculetor</Text>
             </Link>
           </Box>
-          <Box>
-            <Link
-              display={{ base: "none", md: "block", lg: "block" }}
-              to="/chatbot"
-            >
-              <Text marginRight={10}>Chatbot</Text>
+          <Box display={{ base: "none", md: "block" }}>
+            <Link to="/chatbot">
+              <Text marginRight={10}> 🤖Chatbot</Text>
             </Link>
           </Box>
 
@@ -100,7 +91,7 @@ function Navbar() {
               </ListItem>
               <ListItem>
                 <ListIcon as={AtSignIcon} color="green.500" />
-                Other
+                Chatbot
               </ListItem>
             </List>
           </DrawerBody>
